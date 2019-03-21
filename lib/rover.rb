@@ -23,4 +23,16 @@ class Rover
     update_position
     return @position
   end
+
+  def increase_y
+    @y_axis = @y_axis + 1
+    update_position
+    return @position
+  end
+
+  def decrease_y
+    @y_axis = @y_axis - 1
+    update_position
+    return @position
+  end
 end
