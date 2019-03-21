@@ -68,5 +68,4 @@ class Rover
       @position.push("N")
     end
   end
-
 end
