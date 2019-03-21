@@ -63,7 +63,7 @@ class Rover
     elsif @position[2] == "S"
       @position.pop
       @position.push("E")
-    else
+    elsif @position[2] == "E"
       @position.pop
       @position.push("N")
     end
