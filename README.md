@@ -56,3 +56,5 @@ So that I can look at things
 I want to be able to change directions
 
 As a rover
+So that I can go where I want
+I want to move according to where I am facing

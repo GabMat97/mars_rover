@@ -25,4 +25,50 @@ describe RSpec do
     rover = Rover.new(0, 1, "N")
     expect(rover.decrease_y).to eq([0, 0, "N"])
   end
+
+  it "tests for rightwards direction change when facing North" do
+    rover = Rover.new(0, 0, "N")
+    expect(rover.turn_right).to eq([0, 0, "E"])
+  end
+
+  it "test for rightwards direction change when facing East" do
+    rover = Rover.new(0, 0, "E")
+    expect(rover.turn_right).to eq([0, 0, "S"])
+  end
+
+  it "test for rightwards direction change when facing South" do
+    rover = Rover.new(0, 0, "S")
+    expect(rover.turn_right).to eq([0, 0, "W"])
+  end
+
+  it "test for rightwards direction change when facing West" do
+    rover = Rover.new(0, 0, "W")
+    expect(rover.turn_right).to eq([0, 0, "N"])
+  end
+
+  it "test for rightwards direction change when facing East" do
+    rover = Rover.new(0, 0, "E")
+    expect(rover.turn_right).to eq([0, 0, "S"])
+  end
+
+  it "tests for leftwards direction change when facing North" do
+    rover = Rover.new(0, 0, "N")
+    expect(rover.turn_left).to eq([0, 0, "W"])
+  end
+
+  it "tests for leftwards direction change when facing East" do
+    rover = Rover.new(0, 0, "E")
+    expect(rover.turn_left).to eq([0, 0, "S"])
+  end
+
+  it "tests for leftwards direction change when facing South" do
+    rover = Rover.new(0, 0, "S")
+    expect(rover.turn_left).to eq([0, 0, "E"])
+  end
+
+  it "tests for leftwards direction change when facing East" do
+    rover = Rover.new(0, 0, "E")
+    expect(rover.turn_left).to eq([0, 0, "N"])
+  end
+
 end
