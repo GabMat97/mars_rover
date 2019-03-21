@@ -68,4 +68,24 @@ class Rover
       @position.push("N")
     end
   end
+
+  def move
+    if @position[2] == "N"
+      @y_axis = @y_axis + 1
+      update_position
+      return @position
+    elsif @position[2] == "E"
+      @x_axis = @x_axis + 1
+      update_position
+      return @position
+    elsif @position[2] == "S"
+      @y_axis = @y_axis - 1
+      update_position
+      return @position
+    elsif @position[2] == "W"
+      @x_axis = @x_axis - 1
+      update_position
+      return @position
+    end
+  end
 end
