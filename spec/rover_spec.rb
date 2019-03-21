@@ -57,7 +57,7 @@ describe RSpec do
   end
 
   it "tests for leftwards direction change when facing East" do
-    rover = Rover.new(0, 0, "E")
+    rover = Rover.new(0, 0, "W")
     expect(rover.turn_left).to eq([0, 0, "S"])
   end
 

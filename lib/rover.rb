@@ -52,4 +52,21 @@ class Rover
       @position.push("N")
     end
   end
+
+  def turn_left
+    if @position[2] == "N"
+      @position.pop
+      @position.push("W")
+    elsif @position[2] == "W"
+      @position.pop
+      @position.push("S")
+    elsif @position[2] == "S"
+      @position.pop
+      @position.push("E")
+    else
+      @position.pop
+      @position.push("N")
+    end
+  end
+
 end
