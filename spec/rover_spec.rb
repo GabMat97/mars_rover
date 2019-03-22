@@ -90,4 +90,36 @@ describe RSpec do
     rover = Rover.new(1, 0, "W")
     expect(rover.move).to eq([0, 0, "W"])
   end
+
+  # it "tests for move and direction change" do
+  #   rover = Rover.new(1, 1, "N")
+  #   expect(rover.turn_left).to eq([1, 1, "W"])
+  #   p rover.turn_left
+  #   expect(rover.move).to eq([0, 1, "W"])
+  # end
+
+  it "tests for TW requirements" do
+    rover = Rover.new(1, 2, "N")
+    p rover.turn_left
+    p rover.move
+    p rover.turn_left
+    p rover.move
+    rover.turn_left
+    rover.move
+    rover.turn_left
+    rover.move
+    rover.move
+    expect(rover.position).to eq([1, 3, "N"])
+    rover2 = Rover.new(3, 3, "E")
+    rover2.move
+    rover2.move
+    rover2.turn_right
+    rover2.move
+    rover2.move
+    rover2.turn_right
+    rover2.move
+    rover2.turn_right
+    rover2.turn_right
+    expect(rover2.move).to eq([5, 1, "E"])
+  end
 end
