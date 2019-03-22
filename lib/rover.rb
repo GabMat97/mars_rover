@@ -1,108 +1,66 @@
 class Rover
 
-  attr_accessor :position
+  attr_accessor :x_axis, :y_axis, :direction
   def initialize(x, y, direction)
     @x_axis = x
     @y_axis = y
     @direction = direction
-    @position = []
-    update_position
-
   end
 
-  def update_position
-    @position =  [@x_axis, @y_axis, @direction]
-    return @position
+  def position
+    return [@x_axis, @y_axis, @direction]
   end
 
   def increase_x
-    @x_axis = @x_axis + 1
-    update_position
+    @x_axis += 1
   end
 
   def decrease_x
-    @x_axis = @x_axis - 1
-    update_position
+    @x_axis -= 1
   end
 
   def increase_y
-    @y_axis = @y_axis + 1
-    update_position
+    @y_axis += 1
   end
 
   def decrease_y
-    @y_axis = @y_axis - 1
-    update_position
+    @y_axis -= 1
   end
 
   def turn_right
-    if @position[2] == "N"
-      @position.pop
-      @position.push("E")
-    elsif @position[2] == "E"
-      @position.pop
-      @position.push("S")
-    elsif @position[2] == "S"
-      @position.pop
-      @position.push("W")
-    elsif @position[2] == "W"
-      @position.pop
-      @position.push("N")
+    if @direction == "N"
+      @direction = "E"
+    elsif @direction == "E"
+      @direction = "S"
+    elsif @direction == "S"
+      @direction = "W"
+    elsif @direction == "W"
+      @direction = "N"
     end
   end
 
   def turn_left
-    if @position[2] == "N"
-      @position.pop
-      @position.push("W")
-    elsif @position[2] == "W"
-      @position.pop
-      @position.push("S")
-    elsif @position[2] == "S"
-      @position.pop
-      @position.push("E")
-    elsif @position[2] == "E"
-      @position.pop
-      @position.push("N")
+    if @direction == "N"
+      @direction = "W"
+    elsif @direction == "W"
+      @direction = "S"
+    elsif @direction == "S"
+      @direction = "E"
+    elsif @direction == "E"
+      @direction = "N"
     end
   end
+
   def move
-    case @position[2]
+    case @direction
     when 'N'
-      # @position[1] += 1
-      @y_axis = @y_axis + 1
-      @position = [@x_axis, @y_axis, 'N']
+      increase_y
     when 'E'
-      # @position[0] += 1
-      @x_axis = @x_axis + 1
-      @position = [@x_axis, @y_axis, 'E']
+      increase_x
     when 'S'
-      # @position[1] -= 1
-      @y_axis = @y_axis - 1
-      @position = [@x_axis, @y_axis, 'S']
+      decrease_y
     when 'W'
-      # @position[0] -= 1
-      @x_axis = @x_axis - 1
-      @position = [@x_axis, @y_axis, 'W']
+      decrease_x
     end
   end
-  # def move
-  #   if @position[2] == "N"
-  #     @y_axis = @y_axis + 1
-  #     update_position
-  #     return @position
-  #   elsif @position[2] == "E"
-  #     @x_axis = @x_axis + 1
-  #     update_position
-  #     return @position
-  #   elsif @position[2] == "S"
-  #     @y_axis = @y_axis - 1
-  #     update_position
-  #     return @position
-  #   elsif @position[2] == "W"
-  #     @x_axis = @x_axis - 1
-  #     update_position
-  #     return @position
-  #   end
-  # end
 end
