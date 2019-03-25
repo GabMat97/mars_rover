@@ -58,3 +58,18 @@ I want to be able to change directions
 As a rover
 So that I can go where I want
 I want to move according to where I am facing
+
+As a rover
+So that I know where I am
+I want a map to be created for me to walk on
+
+As a rover
+So that I don't fall off the map
+I want an error message if I go out of bounds
+
+-----------
+Explanation of design:
+
+My process of writing code consists of starting the project by writing user stories. I then diagram how the project looks either on paper or in my head, depending on its size and then finally start with the actual code.
+Initially I created a way to increase x and y values as a starting point of my code. Following that, I attempted to create 4 different instance variables in x, y, direction and position as those would be the only variables changing. Finally, I wrote the move method which simply changed either x or y according to the direction. I concluded by refactoring my code in the cleanest and DRYest way possible. After that, I created a new file with a new class for map.
+The user is able to interact with my application with a REPL such as irb. I decided to write it in this way as I perceived the person using it will be familiar with coding and will be able to interact with it in that way.
